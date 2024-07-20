@@ -22,7 +22,7 @@ async def test_scraper():
     ]
     scraper = AsyncWebScraper(urls)
     results = await scraper.run()
-    
+
     assert len(results) == len(urls)
     assert all(isinstance(result, dict) for result in results)
     assert all("title" in result for result in results)
